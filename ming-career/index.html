@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#eee4cd">
+<meta name="description" content="大明仕途录：明代科举与官职迁转文字模拟游戏。">
+<title>大明仕途录 · 仕途新章 V5</title>
+
+<style>
+html,body{margin:0;min-height:100%;background:#eee4cd;color:#30291f}
+#boot{position:fixed;inset:0;z-index:99;background:#eee4cd;display:flex;justify-content:center;align-items:center;text-align:center;font-family:serif;padding:24px}
+#boot .intro{max-width:310px}#boot h1{font-size:30px;letter-spacing:.19em}#boot p{font-size:14px;color:#756650;line-height:1.75}
+#boot .boot-spin{margin:16px auto;width:30px;height:30px;border-radius:100%;border:3px solid #cfbea3;border-top-color:#903a2f;animation:turn .8s linear infinite}@keyframes turn{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="boot" role="status"><div class="intro"><h1>大明仕途录</h1><p>一纸功名入仕途，半生浮沉在庙堂</p><div class="boot-spin"></div><p id="boot-reason">正在打开史册……</p></div></div>
+<main id="app" aria-live="off"></main>
+<noscript>此游戏需要启用 JavaScript。请使用 Safari、Chrome 或微信内置浏览器打开。</noscript>
+<script>
+(function(){
+ var boot=document.getElementById('boot'),msg=document.getElementById('boot-reason');
+ window.MingBoot={ok:function(){if(boot&&boot.parentNode)boot.parentNode.removeChild(boot)},fail:function(detail){if(!boot)return;boot.innerHTML='<div class="intro"><h1>页面载入失败</h1><p>游戏暂时无法启动，请刷新页面。</p><p id="boot-error" style="word-break:break-all;color:#943b2f"></p><button onclick="location.reload()" style="padding:12px 20px;border:0;border-radius:8px;background:#943b2f;color:#fff">重新加载</button></div>';document.getElementById('boot-error').textContent=String(detail||'未知错误').slice(0,240)}};
+ window.onerror=function(message,source,line){window.MingBoot.fail('脚本错误：'+message+' · '+line);return false};
+ window.onunhandledrejection=function(evt){window.MingBoot.fail('未捕获错误：'+evt.reason)};
+ setTimeout(function(){if(document.getElementById('boot'))window.MingBoot.fail('启动超时，请刷新或尝试系统浏览器')},10000);
+})();
+</script>
+
+
+
+<script src="./bundle-34d8fe0cfd.js"></script>
+</body>
+</html>
